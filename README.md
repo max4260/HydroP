@@ -16,8 +16,6 @@ This is a Raspberry Pi hydroponics controller.
 1. Make a branch for each POC area:
 	
 	>i. Record Temp sensor to SQLite.
-	
 	>ii. Turn a 120V light on and off.
-	
 	>iii. Make an install script for all dependencies.
 	
