@@ -4,7 +4,7 @@ conn = sqlite3.connect("../python/hydro.db")
 c = conn.cursor()
 
 # Create table
-c.execute('''CREATE TABLE temperates
+c.execute('''CREATE TABLE temperatures
              (device text, timestamp integer, temperature real)''')
 
 # Create table
