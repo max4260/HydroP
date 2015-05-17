@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>WebIOPi | Light Control</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="/webiopi.js"></script>
+        <script type="text/javascript">
+		var lightButton;
+		var GPIO_LIGHT = 17;
+		
+        webiopi().ready(function() {
+                // Create a "Light" labeled button for GPIO 17
+                lightButton = webiopi().createGPIOButton(GPIO_LIGHT, "Light");
+
+                // Append button to HTML element with ID="controls" using jQuery
+                $("#controls").append(lightButton);
+
+                // Refresh GPIO buttons
+                // pass true to refresh repeatedly of false to refresh once
+                webiopi().refreshGPIO(true);
+        });
+        
+        jQuery(document).ready(function() {
+          jQuery('#btn-interval').click(function() {
+	        if (parseInt($("#txt-interval").val())) {
+			  webiopi().callMacro("setLightInterval", [$("#txt-interval").val()]);
+	        } else {
+	          alert("Give me an integer...jerk.");
+	        }
+          });
+        });
+                
+        </script>
+        <style type="text/css">
+                button {
+                        display: block;
+                        margin: 5px 5px 5px 5px;
+                        width: 160px;
+                        height: 45px;
+                        font-size: 24pt;
+                        font-weight: bold;
+                        color: white;
+                }
+                
+                #gpio17.LOW {
+                        background-color: Black;
+                }
+                
+                #gpio17.HIGH {
+                        background-color: Blue;
+                }
+        </style>
+</head>
+<body>
+        <div style="width: 15%; float: left;"><input type="text" id="txt-interval"><input type="button" id="btn-interval" value="Set interval (seconds)"></div>
+        <div style="width: 85%; float: left;" id="controls" align="center"></div>
+</body>
+</html>
+
