@@ -15,8 +15,8 @@ dbcursor = dbconn.cursor()
 
 while (1 == 1):
 
-	temp = tmp.getFahrenheit()
+	temp = tempSensor.getFahrenheit()
 	rightNah = time.gmtime()
-	c.execute("INSERT INTO temperatures('device', 'timestamp', 'temperature') VALUES (?, ?, ?);", ("TEMP1", rightNah, temp))
+	dbcursor.execute("INSERT INTO temperatures('device', 'timestamp', 'temperature') VALUES (?, ?, ?);", ("TEMP1", rightNah, temp))
 	dbconn.commit()
 	webiopi.sleep(interval)

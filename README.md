@@ -6,6 +6,11 @@ HydroP
 This is a Raspberry Pi hydroponics controller.
 
 ## Version History
+* _v0.01.01_ - **2015-05-17**:
+	
+	>Added framework for controlling external hardware.
+	>Added SQLite framework.
+
 * _v0.00.01_ - **2015-04-17**:
 	
 	>First commit.
@@ -13,21 +18,17 @@ This is a Raspberry Pi hydroponics controller.
 
 
 ## TODO List:
-1. Make a 'Core' branch and then a 'Sub Core' branchfor each POC area:
+1. Update UI:
 	
-	>i. 'Core' branch will contain base web io code and dashboard
+	>i. 'Dashboard' - Screen that shows status of the system.
 	
-	>>i. 'Sub Core 1' - Record Temp sensor to SQLite.
+	>ii. 'Graphs' - Screen that displays graphs for all data logged readings.
 	
-	>>ii. 'Sub Core 2' - Turn a 120V light on and off.
-	
-	>ii. Make an install script for all dependencies.
+	>iii. 'Settings' - Screen that displays and sets options for the system.
 	
 	
 	
 ## Future List:
-SQLite
-
 Graph all data with google charts
 
 automatic & manual modes
