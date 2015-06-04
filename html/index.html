@@ -1,60 +1,132 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>WebIOPi | Light Control</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script type="text/javascript" src="/webiopi.js"></script>
-        <script type="text/javascript">
-		var lightButton;
-		var GPIO_LIGHT = 17;
-		
-        webiopi().ready(function() {
-                // Create a "Light" labeled button for GPIO 17
-                lightButton = webiopi().createGPIOButton(GPIO_LIGHT, "Light");
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard - Light Way Admin</title>
+        <link rel="stylesheet" type="text/css"
+        href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/local.css">
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- you need to include the shieldui css and js assets in order
+        for the charts to work -->
+        <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/shieldui-all.min.css">
+        <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css">
+        <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+        <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Admin Panel</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav side-nav">
+                        <li class="active">
+                            <a href="index.html"><i class="fa fa-bullseye"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="charts.html"><i class="fa fa-tasks"></i>&nbsp;Charts</a>
+                        </li>
+                        <li>
+                            <a href="settings.html"><i class="fa fa-list-ol"></i>&nbsp;Settings</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right navbar-user"></ul>
+                </div>
+            </nav>
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Dashboard
+                            <small>HydroP</small>
+                        </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <i class="fa fa-clock-o"></i>Alerts</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row alert-success">
+                                    <div class="col-xs-5">
+                                        <i class="fa fa-thumbs-o-up fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-5 text-right">
+                                        <p class="alerts-heading">343</p>
+                                        <p class="alerts-text">Days until harvest</p>
+                                    </div>
+                                </div>
+                                <div class="row alert-success">
+                                    <div class="col-xs-5">
+                                        <i class="fa fa-thumbs-o-up fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-5 text-right">
+                                        <p class="alerts-heading">1256</p>
+                                        <p class="alerts-text">Sensors</p>
+                                    </div>
+                                </div>
+                                <div class="row alert-danger">
+                                    <div class="col-xs-5">
+                                        <i class="fa fa-thumbs-o-down fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-5 text-right">
+                                        <p class="alerts-heading">4</p>
+                                        <p class="alerts-text">Errors</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <i class="fa fa-bar-chart-o"></i>Current Status</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row alert-success">
+                                    <div class="col-xs-5 col-md-3">
+                                        <i class="fa fa-5x text-success umbs-o-up fa-smile-o"></i>
+                                        <p class="alerts-text">Sensor One</p>
+                                    </div>
+                                    <div class="col-xs-5 text-success col-md-3">
+                                        <i class="fa fa-5x text-success umbs-o-up fa-smile-o"></i>
+                                        <p class="alerts-text">Sensor Two</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-5 col-md-3">
+                                        <i class="fa fa-5x text-warning umbs-o-up fa-meh-o"></i>
+                                        <p class="alerts-text text-success">Sensor Three</p>
+                                    </div>
+                                    <div class="col-xs-5 test-success col-md-3">
+                                        <i class="fa fa-5x text-danger umbs-o-up fa-frown-o"></i>
+                                        <p class="alerts-text text-success">Sensor Four</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /#page-wrapper -->
+            </div>
+        </div>
+    </body>
 
-                // Append button to HTML element with ID="controls" using jQuery
-                $("#controls").append(lightButton);
-
-                // Refresh GPIO buttons
-                // pass true to refresh repeatedly of false to refresh once
-                webiopi().refreshGPIO(true);
-        });
-        
-        jQuery(document).ready(function() {
-          jQuery('#btn-interval').click(function() {
-	        if (parseInt($("#txt-interval").val())) {
-			  webiopi().callMacro("setLightInterval", [$("#txt-interval").val()]);
-	        } else {
-	          alert("Give me an integer...jerk.");
-	        }
-          });
-        });
-                
-        </script>
-        <style type="text/css">
-                button {
-                        display: block;
-                        margin: 5px 5px 5px 5px;
-                        width: 160px;
-                        height: 45px;
-                        font-size: 24pt;
-                        font-weight: bold;
-                        color: white;
-                }
-                
-                #gpio17.LOW {
-                        background-color: Black;
-                }
-                
-                #gpio17.HIGH {
-                        background-color: Blue;
-                }
-        </style>
-</head>
-<body>
-        <div style="width: 15%; float: left;"><input type="text" id="txt-interval"><input type="button" id="btn-interval" value="Set interval (seconds)"></div>
-        <div style="width: 85%; float: left;" id="controls" align="center"></div>
-</body>
 </html>
-
