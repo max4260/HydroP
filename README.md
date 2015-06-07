@@ -12,7 +12,7 @@ This is a Raspberry Pi hydroponics controller.
 	>>Dashboard - Added;
 	>>Charts - Added;
 	>>Setting - Added; layout has mostly been completed
-	>...
+	>Commented out old index.
 	
 * _v0.01.01_ - **2015-05-17**:
 	
