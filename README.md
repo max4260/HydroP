@@ -9,14 +9,19 @@ This is a Raspberry Pi hydroponics controller.
 * _v0.02.00_ - **2015-06-07**:
 	
 	>Updated UI to BootStrap.
+	
 	>>Dashboard - Added;
+	
 	>>Charts - Added;
+	
 	>>Setting - Added; layout has mostly been completed
+	
 	>Commented out old index.
 	
 * _v0.01.01_ - **2015-05-17**:
 	
 	>Added framework for controlling external hardware.
+	
 	>Added SQLite framework.
 
 * _v0.00.01_ - **2015-04-17**:
