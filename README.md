@@ -6,6 +6,12 @@ HydroP
 This is a Raspberry Pi hydroponics controller.
 
 ## Version History
+* _v0.02.01_ - **2015-06-15**:
+
+	>Updated folder structure
+	
+	>Added basic structure for OOP module start/stop
+
 * _v0.02.00_ - **2015-06-07**:
 	
 	>Updated UI to BootStrap.
