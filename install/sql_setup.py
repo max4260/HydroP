@@ -15,5 +15,9 @@ c.execute('''CREATE TABLE devices
 c.execute('''CREATE TABLE configurations
              (name text, value text)''')
 			 
-c.execute("INSERT INTO devices('name', 'status', 'interval') VALUES ('LIGHT1', 1, 5);")
+c.execute("INSERT INTO devices('name', 'status', 'interval') VALUES ('LIGHT1', 0, 5);")
+c.execute("INSERT INTO devices('name', 'status', 'interval') VALUES ('TEMP1', 0, 5);")
+c.execute("INSERT INTO devices('name', 'status', 'interval') VALUES ('TEMP2', 0, 5);")
+c.execute("INSERT INTO devices('name', 'status', 'interval') VALUES ('TEMP3', 0, 5);")
+c.execute("INSERT INTO devices('name', 'status', 'interval') VALUES ('TEMP4', 0, 5);")
 conn.commit()

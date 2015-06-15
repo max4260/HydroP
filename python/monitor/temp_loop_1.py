@@ -6,14 +6,16 @@ import time
 
 GPIO = webiopi.GPIO
 tempSensor = deviceInstance("tmp")
-interval = int(sys.argv[1])
 SCRIPT_PATH = "/home/pi/HydroP/python/"
 
 dbconn = sqlite3.connect(SCRIPT_PATH + "hydro.db")
 dbconn.row_factory = sqlite3.Row
 dbcursor = dbconn.cursor()
 
-while (1 == 1):
+dbcursor.execute("SELECT status, interval FROM devices WHERE name = 'TEMP1' VALUES (?, ?);", (status, interval))
+
+
+while (status == 1):
 
 	temp = tempSensor.getFahrenheit()
 	rightNah = time.gmtime()
