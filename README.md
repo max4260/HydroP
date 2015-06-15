@@ -8,6 +8,7 @@ This is a Raspberry Pi hydroponics controller.
 ## Version History
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 * _v0.02.02_ - **2015-06-15**:
 
 	>Updated folder structure
@@ -28,6 +29,8 @@ This is a Raspberry Pi hydroponics controller.
 	
 	>Commented out old index.
 	
+=======
+>>>>>>> parent of 65cdafc... BootStrap V2
 =======
 >>>>>>> parent of 65cdafc... BootStrap V2
 =======
