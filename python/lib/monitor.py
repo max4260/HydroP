@@ -1,20 +1,22 @@
 import os
+import subprocess
+
+SCRIPT_PATH = "/home/pi/HydroP/"
 
 #start either one or all scripts in the ../monitor folder
-class Start(object):
+class Module(object):
 
-	def All():
-		for filename in os.listdir('../monitor'):
-			#do stuff for each file found
+	def Start(*Module):
 		
-	def One(module):
-		#do stuff for single file
-
-#stop either one or all scripts in the ../monitor folder
-class Stop(object):
-
-	def All():
-		#set database so all files stop
+		if(module <> null):
+			#For all:
+			for FileName in os.listdir(SCRIPT_PATH):
+				#do stuff for each file found
+				subprocess.Popen(["python",SCRIPT_PATH + FileName)
+		else:
+			#For single file
+				#do stuff for file
 		
-	def One(module):
-		#et database so specific file stops files stop
+	def Stop(module):
+		#do stuff
+
