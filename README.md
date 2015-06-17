@@ -6,10 +6,7 @@ HydroP
 This is a Raspberry Pi hydroponics controller.
 
 ## Version History
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 * _v0.02.02_ - **2015-06-15**:
 
 	>Updated folder structure
@@ -30,14 +27,6 @@ This is a Raspberry Pi hydroponics controller.
 	
 	>Commented out old index.
 	
-=======
->>>>>>> parent of 65cdafc... BootStrap V2
-=======
->>>>>>> parent of 65cdafc... BootStrap V2
-=======
->>>>>>> parent of 65cdafc... BootStrap V2
-=======
->>>>>>> parent of 65cdafc... BootStrap V2
 * _v0.01.01_ - **2015-05-17**:
 	
 	>Added framework for controlling external hardware.
