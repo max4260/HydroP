@@ -130,7 +130,7 @@
                     <div class="col-lg-6">
                         <h1>Input Settings</h1>
                         <h4 class="text-center">Temperature</h4>
-                        <div ng-app="Mode"></div>
+                        <div></div>
                         <table class="table">
                             <tbody>
                                 <tr>
@@ -144,7 +144,7 @@
                                             </select>
 											<P>{{vm.TEMP1_Mode.TEMP1_Mode}}</P>
                                         </div>
-                                        <div class="form-group has-success" ng-show="vm.TEMP1_Mode.TEMP1_Mode='Enabled'">
+                                        <div class="form-group has-success" ng-show="vm.TEMP1_Mode.TEMP1_Mode=='Enabled'">
                                             <label class="control-label" for="inputSuccess">Low</label>
                                             <input type="text" class="form-control" id="inputSuccess">
                                         </div>
@@ -406,9 +406,8 @@
             </div>
         </div>
 		
-		<script> ng-show="vm.TEMP1_Mode.TEMP1_Mode=''
+		<script>
 		
-		</script>
 		angular.module('app', [])
 		.controller('TEMP1_Mode', function()	{
 			this.display = false;
@@ -424,6 +423,8 @@
 			};
 			
 		});
+		
+		</script>
 		
     </body>
 </html>
