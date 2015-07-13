@@ -10,8 +10,7 @@
         <link rel="stylesheet" type="text/css" href="css/local.css">
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		<script type="text/javascript" src="settings.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     </head>
     
     <body>
@@ -168,30 +167,19 @@
                                 <tr>
                                     <td>2</td>
                                     <td>
-										<div class="form-group has-success">
-                                            <label>Mode</label>
-                                            <select class="form-control" id="TEMP2_Mode" ng-model="TEMP2.Mode" ng-change="displayGo">
-                                                <option>Disabled</option>
-                                                <option>Enabled</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group has-success" ng-show="TEMP2.Mode=='Enabled'">
+                                        <div class="form-group has-success">
                                             <label class="control-label" for="inputSuccess">Low</label>
                                             <input type="text" class="form-control" id="inputSuccess">
                                         </div>
                                     </td>
                                     <td>
-										<div class="form-group has-success" ng-show="TEMP2.Mode=='Enabled'">
-                                            <label class="control-label" for="inputSuccess" >Interval</label>
-                                            <input type="text" class="form-control" id="inputSuccess">
-                                        </div>
-                                        <div class="form-group has-success" ng-show="TEMP2.Mode=='Enabled'">
+                                        <div class="form-group has-success">
                                             <label class="control-label" for="inputSuccess">High</label>
                                             <input type="text" class="form-control" id="inputSuccess">
                                         </div>
                                     </td>
                                     <td>
-                                        <p class="alerts-heading text-success" ng-show="TEMP2.Mode=='Enabled'">Value</p>
+                                        <p class="alerts-heading text-success">Value</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -417,6 +405,25 @@
             </div>
         </div>
 		
+		<script>
+		
+		angular.module('app', [])
+		.controller('TEMP1_Mode', function()	{
+			this.display = false;
+			
+			this.displayGo = function()	{
+				var chk = this.TEMP1.Mode;
+				
+				if (chk == 'Enabled')	{
+					this.display = true;
+				}	else	{
+					this.display = false;
+				}
+			};
+			
+		});
+		
+		</script>
 		
     </body>
 </html>
