@@ -199,19 +199,30 @@
                                 <tr>
                                     <td>3</td>
                                     <td>
-                                        <div class="form-group has-success">
+										<div class="form-group has-success">
+                                            <label>Mode</label>
+                                            <select class="form-control" id="TEMP3_Mode" ng-model="TEMP3.Mode" ng-change="displayGo">
+                                                <option>Disabled</option>
+                                                <option>Enabled</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group has-success" ng-show="TEMP3.Mode=='Enabled'">
                                             <label class="control-label" for="inputSuccess">Low</label>
                                             <input type="text" class="form-control" id="inputSuccess">
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="form-group has-success">
+										<div class="form-group has-success" ng-show="TEMP3.Mode=='Enabled'">
+                                            <label class="control-label" for="inputSuccess" >Interval</label>
+                                            <input type="text" class="form-control" id="inputSuccess">
+                                        </div>
+                                        <div class="form-group has-success" ng-show="TEMP3.Mode=='Enabled'">
                                             <label class="control-label" for="inputSuccess">High</label>
                                             <input type="text" class="form-control" id="inputSuccess">
                                         </div>
                                     </td>
                                     <td>
-                                        <p class="alerts-heading text-success">Value</p>
+                                        <p class="alerts-heading text-success" ng-show="TEMP3.Mode=='Enabled'">Value</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -219,19 +230,30 @@
                                 <tr>
                                     <td>4</td>
                                     <td>
-                                        <div class="form-group has-success">
+										<div class="form-group has-success">
+                                            <label>Mode</label>
+                                            <select class="form-control" id="TEMP4_Mode" ng-model="TEMP4.Mode" ng-change="displayGo">
+                                                <option>Disabled</option>
+                                                <option>Enabled</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group has-success" ng-show="TEMP4.Mode=='Enabled'">
                                             <label class="control-label" for="inputSuccess">Low</label>
                                             <input type="text" class="form-control" id="inputSuccess">
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="form-group has-success">
+										<div class="form-group has-success" ng-show="TEMP4.Mode=='Enabled'">
+                                            <label class="control-label" for="inputSuccess" >Interval</label>
+                                            <input type="text" class="form-control" id="inputSuccess">
+                                        </div>
+                                        <div class="form-group has-success" ng-show="TEMP4.Mode=='Enabled'">
                                             <label class="control-label" for="inputSuccess">High</label>
                                             <input type="text" class="form-control" id="inputSuccess">
                                         </div>
                                     </td>
                                     <td>
-                                        <p class="alerts-heading text-success">Value</p>
+                                        <p class="alerts-heading text-success" ng-show="TEMP4.Mode=='Enabled'">Value</p>
                                     </td>
                                 </tr>
                             </tbody>
